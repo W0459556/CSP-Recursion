@@ -22,6 +22,8 @@ function main(findFileName, directoryToSearch){
         else if((directoryContents[i].toLowerCase()) === findFileName.toLowerCase()){
             console.log(directoryToSearch + "/" + directoryContents[i]);
             console.log(`Found ${directoryContents[i]}`);
+            console.log(fs.readFileSync((directoryToSearch + "/" + directoryContents[i]), {encoding: 'utf-8'}));
+            return;
         }
     }
 }
